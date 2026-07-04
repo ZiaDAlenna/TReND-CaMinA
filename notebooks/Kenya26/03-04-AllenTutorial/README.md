@@ -40,39 +40,10 @@ conda activate trend2025
 You should now be able to run the notebooks locally.
 
 
-3.  Allen Institute data copied locally to your laptop
-
-	
-If necessary, we have just the subset of the data that is being used in the tutorials available to be copied onto your laptop.  The instructors will provide this data for you.  It will be in a folder called ‘allen_brain_observatory’.  The files from the dataset that are needed are
-```
-/allen-brain-observatory
-	/visual-coding-2p
-		cell_specimens.json
-		experiment_containers.json
-		manifest.json
-		ophys_experiments.json
-		stimulus_mappings.json
-		/ophys_experiment_data
-			501559087.nwb
-			502793808.nwb
-			540684467.nwb
-```
-These can be copied from the hard drive to transfer to another laptop if for some reason the hard drives will not mount or don't work on a particular laptop.
-
-The setup is nearly identical to #2 above.  The difference is where the ‘manifest_file’ variable points.  Set ‘data_root’ to point to the location of ‘allen_brain_observatory’.
-```
-data_root = /path/to/allen_brain_observatory
-```
-and then copy the last two lines of the cell above in #2.
-```
-manifest_file = os.path.join(data_root,'allen-brain-observatory/visual-coding-2p/manifest.json')
-boc = BrainObservatoryCache(manifest_file=manifest_file)
-```
-
-4.  Downloading Allen Institute data. - NOT RECOMMENDED
+3.  Downloading Allen Institute data. - NOT RECOMMENDED
 
 If necessary, you can download any data you need yourself.  To do this, assign ‘manifest_file’ to a location you want ‘manifest.json’ to be and then use the last line of the cell above.
 ```
 boc = BrainObservatoryCache(manifest_file=manifest_file)
 ```
-When you request data, it will be downloaded to your local machine.  For most analyses this will be prohibitive and we do not recommend it.  
+When you request data, it will be downloaded to your local machine.  For most analyses this will be prohibitively slow and we do not recommend it.  
